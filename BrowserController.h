@@ -112,6 +112,8 @@
 - (IBAction)checkSelectedFiles:(id)sender;
 - (IBAction)uncheckSelectedFiles:(id)sender;
 
+- (BOOL)checkForOverwriteOfExistingFiles:(NSArray *)files atPath:(NSString *)path;
+
 - (void)backgroundCopy:(id)arg;
 - (IBAction)copyFiles:(id)sender;
 - (void)copyFiles:(NSArray *)files toPath:(NSString *)path;

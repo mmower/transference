@@ -459,7 +459,10 @@ typedef enum {
 
 - (IBAction)copyFiles:(id)__sender
 {
-	NSLog( @"copyFiles:" );
+	if( ![self checkForOverwriteOfExistingFiles:[self sourceFilesForAction] atPath:[self destinationPath]] ) {
+		return;
+	}
+	
 	[NSApp beginSheet:activityWindow
 	   modalForWindow:appWindow
 		modalDelegate:self
@@ -485,6 +488,36 @@ typedef enum {
 	[self performSelectorOnMainThread:@selector(finishedCopy) withObject:nil waitUntilDone:YES];
 }
 
+- (BOOL)checkForOverwriteOfExistingFiles:(NSArray *)__files atPath:(NSString *)__path
+{
+	int filesToOverwrite = 0;
+	foreach( file, __files ) {
+		if( [[NSFileManager defaultManager] fileExistsAtPath:[self makeTarget:file withPath:__path]] ) {
+			filesToOverwrite++;
+		}
+	}
+	
+	if( filesToOverwrite > 0 ) {
+		int choice = NSRunAlertPanel( @"Copy",
+									  @"This action will overwrite %d files that exist in the destination.",
+									  @"Proceed",
+									  @"Cancel",
+									  nil,
+									  filesToOverwrite
+									  );
+		
+		switch( choice ) {
+			case NSAlertDefaultReturn:
+				return YES;
+				
+			default:
+				return NO;
+		}
+	}
+	
+	return YES;
+}
+
 - (void)copyFiles:(NSArray *)__files toPath:(NSString *)__path
 {
 	foreach( file, __files ) {
@@ -498,13 +531,28 @@ typedef enum {
 - (BOOL)copyFile:(FileWrapper *)__file toPath:(NSString *)__path
 {
 	[activityMessage setStringValue:[NSString stringWithFormat:@"Copying %@", [__file name]]];
-	BOOL success = [[NSFileManager defaultManager] copyPath:[__file path] toPath:[self makeTarget:__file withPath:__path] handler:self];
+	
+	BOOL success = YES;
+	
+	// We must delete any existing file
+	if( [[NSFileManager defaultManager] fileExistsAtPath:[self makeTarget:__file withPath:__path]] ) {
+		success = [[NSFileManager defaultManager] removeFileAtPath:[self makeTarget:__file withPath:__path] handler:self];
+		NSLog( @"Deleted: %@ (%@)", [self makeTarget:__file withPath:__path], success ? @"YES" : @"NO" );
+	}
+	
+	if( success ) {
+		success = [[NSFileManager defaultManager] copyPath:[__file path] toPath:[self makeTarget:__file withPath:__path] handler:self];
+	}
+	
 	return success;
 }
 
 - (IBAction)moveFiles:(id)__sender
 {
-	NSLog( @"moveFiles:" );
+	if( ![self checkForOverwriteOfExistingFiles:[self sourceFilesForAction] atPath:[self destinationPath]] ) {
+		return;
+	}
+
 	[NSApp beginSheet:activityWindow
 	   modalForWindow:appWindow
 		modalDelegate:self
