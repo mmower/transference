@@ -1,0 +1,12 @@
+body {
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	margin: 12px auto 0;
+	width: 500px;
+	background-color: white;
+	text-align: left;
+}
+
+p {
+	font-size: 9pt;
+	margin-left: 0;
+}

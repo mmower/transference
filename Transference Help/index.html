@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Transference</title>
+    <meta name="AppleTitle" content="Transference Help" />
+    <link rel="stylesheet" media="screen" href="help.css" />
+  </head>
+  <body>
+    <h1>Transference</h1>
+    <h2>Introduction</h2>
+    <p>Transference is a utility to help you copy &amp; move files (and folders) quickly and precisely. Unlike Finder, which uses multiple windows and dragging, Transference is based around a 2-pane metaphor. In the left pane you specify the files to be transferred, in the right pane you specify the destination, then you trigger the transfer. Simple! No more dropping things on the wrong folder, or having the folder window disappear, or spring open in the wrong place, or any of the myriad other ways Finder can trip you up.</p>
+
+    <h2>The Browser Window</h2>
+    <p>Transference is based around the concepts of a source-pane (the left pane) and a destination-pane (the right pane) with files flowing from left to right, source to destination. The source and destination are highlighted in the status area at the bottom of the window. These panes can be resized by dragging the divider between them.</p>
+    <p>Every file and folder in the source pane has a checkbox next to it. Transference will only copy or move files that have been checked. In Finder it can be difficult to select multiple files accurately so that you either have to try and maintain a tricky multiple-selection or do many smaller drag operations. Transference makes this easy, you go down the source list checking off the things you want to transfer and then trigger the transfer at the end.</p>
+    <p>The destination pane displays only folders that can be the target of files from the source pane. This makes it easier to pick out the right folder.</p>
+
+    <h2>Navigating the Filesystem</h2>
+    <p>There are several ways to navigate to the folders you want to work with to reflect the different styles and experience of Mac users. Each pane has a field with the current path displayed in it with a button (marked <tt>...</tt>) to it's right. You can either type in a path or click the button to get a default MacOS X brower dialog.</p>
+    <p>When typing paths into the field you can use the <tt>F5</tt> or <tt>Escape</tt> keys to have Transference auto-complete the path for you. Transference will not allow you to enter an invalid path. You can also drop down a list of previous paths for that browser by clicking the drop-down button immediately to the right of the field.</p>
+    <p>In both browsers you can double-click any folder to drill-down into the contents of that folder. At the bottom of the window Transference indicates where files will be transferred from and to. By default the destination is the folder specified in the destination field however you can quickly specify one of the sub-folders by clicking it. This makes it easy to transfer files between a source and a set of sibling folders.</p>
+    <p>There are also toolbar buttons (and menu items) for selecting the <em>home</em>, <em>root</em>, <em>parent</em>, and <em>previous</em> folders for the currently selected browser.</p>
+
+    <h2>Selecting and Transferring</h2>
+    <p>Specifying files to be transferred is done by putting a checkmark next to them. You can check a single file or any combination of files. In either table of files you can multiple-select rows and then use either the toolbar select/deselect buttons or the keyboard shortcuts <tt>*</tt> to skip, <tt>-</tt> to deselect, <tt>+</tt> (or <tt>Space</tt>) to select, and <tt>Enter</tt> to toggle. On an external keyboard this allows you to process the entire file list quite rapidly.</p>
+    <p>In folders with many files it can be hard to select just the ones you want. Transference has a filter field that you can use to narrow the files you want to work with. When you type a string of characters into the filter field Transference will hide any file whose name does not contain that string. Note that Transference will only transfer files that are not currently filtered regardless of whether they have been checked.</p>
+    <p>Once you have checked the files to be transferred use either the <em>Copy</em> or <em>Move</em> toolbar buttons to do the transfer (alternatively you can use the menu or the keyboard shortcuts <tt>Cmd-Opt-C</tt> for copy and <tt>Cmd-Opt-M</tt> for Move). Transference will display a progress dialog so you can see how the transfer is going.</p>
+    <p>Note that the destination pane shows only folders, not files. You will not be able to see the files that you have copied or moved.</p>
+
+    <h2>Miscellaneous Features</h2>
+    <p>The toolbar has <em>Follow</em> (Cmd-F) and <em>Switch</em> (Cmd-S) buttons.</p>
+    <p>Follow makes the destination pane follow the source pane. If you are transferring files to a sub-folder select the source folder in the source pane then follow to make the destination pane match up. You can then select the sub-folder in the destination pane.</p>
+    <p>Switch makes the source the destination and vice versa. This makes it easy to transfer files between two folders by selecting them and then switching to copy files in either direction.</p>
+    
+  </body>
+</html>
