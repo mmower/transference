@@ -107,6 +107,12 @@
 		[item setImage:[NSImage imageNamed:@"SnapBack"]];
 		[item setTarget:self];
 		[item setAction:@selector(browseBack:)];
+	} else if( [itemIdentifier isEqualToString:@"Files"] ) {
+		[item setLabel:@"Files"];
+		[item setPaletteLabel:[item label]];
+		[item setImage:[NSImage imageNamed:@"Files"]];
+		[item setTarget:self];
+		[item setAction:@selector(toggleShowFilesInTarget:)];
 	}
 			
     return [item autorelease];
@@ -129,6 +135,7 @@
 		@"Back",
 		@"Root",
 		@"Home",
+		@"Files",
 		nil];
 }
 
@@ -142,6 +149,7 @@
 		@"Back",
 		@"Follow",
 		@"Switch",
+		@"Files",
 		NSToolbarFlexibleSpaceItemIdentifier,
 		@"Select",
 		@"Deselect",

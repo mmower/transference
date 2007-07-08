@@ -86,6 +86,7 @@ NSString *TransferenceTargetHistory = @"TargetHistory";
 	[sourceFileTable setDoubleAction:@selector(browseIntoSource:)];
 	[targetFolderTable setDoubleAction:@selector(drillDownTarget:)];
 	
+	showFilesInTarget = NO;
 	[self setSourcePath:[[NSUserDefaults standardUserDefaults] stringForKey:TransferenceSourcePath]];
 	[self setTargetPath:[[NSUserDefaults standardUserDefaults] stringForKey:TransferenceTargetPath]];
 	[sourcePathField addItemsWithObjectValues:[[NSUserDefaults standardUserDefaults] arrayForKey:TransferenceSourceHistory]];
@@ -202,7 +203,10 @@ NSString *TransferenceTargetHistory = @"TargetHistory";
 
 - (void)updateTargetFolders
 {
-	NSPredicate *filter = [NSPredicate predicateWithFormat:@"%K = true", @"isFolder"];
+	NSPredicate *filter = nil;
+	if( !showFilesInTarget ) {
+		filter = [NSPredicate predicateWithFormat:@"%K = true", @"isFolder"];
+	}
 	
 	[self willChangeValueForKey:@"targetFolders"];
 	[targetFolders release];
@@ -311,6 +315,12 @@ typedef enum {
 			[self setTargetPath:[[NSFileManager defaultManager] parentPath:[self targetPath]]];
 			break;
 	}
+}
+
+- (IBAction)toggleShowFilesInTarget:(id)__sender
+{
+	showFilesInTarget = !showFilesInTarget;
+	[self updateTargetFolders];
 }
 
 #pragma mark -

@@ -53,6 +53,7 @@
 	IBOutlet NSComboBox				*targetPathField;
 	IBOutlet NSTableView			*targetFolderTable;
 	IBOutlet NSArrayController		*targetFoldersController;
+	BOOL							showFilesInTarget;
 	
 	IBOutlet NSTextField			*intentField;
 	
@@ -92,6 +93,7 @@
 - (IBAction)chooseTargetPath:(id)sender;
 - (IBAction)targetFollowsSource:(id)sender;
 - (IBAction)switchSourceAndTarget:(id)sender;
+- (IBAction)toggleShowFilesInTarget:(id)sender;
 
 - (IBAction)browseRoot:(id)sender;
 - (IBAction)browseHome:(id)sender;

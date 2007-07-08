@@ -48,6 +48,7 @@
 		C9D0DCBC0C40F703007D3348 /* NSFileManager+Utilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9D0DCBA0C40F703007D3348 /* NSFileManager+Utilities.h */; };
 		C9D0DCBD0C40F703007D3348 /* NSFileManager+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D0DCBB0C40F703007D3348 /* NSFileManager+Utilities.m */; };
 		C9D0DEAF0C414FFB007D3348 /* CHANGES in Resources */ = {isa = PBXBuildFile; fileRef = C9D0DEAE0C414FFB007D3348 /* CHANGES */; };
+		C9D0DECE0C416983007D3348 /* Files.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C9D0DECD0C416983007D3348 /* Files.tiff */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -119,6 +120,7 @@
 		C9D0DCBA0C40F703007D3348 /* NSFileManager+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Utilities.h"; sourceTree = "<group>"; };
 		C9D0DCBB0C40F703007D3348 /* NSFileManager+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Utilities.m"; sourceTree = "<group>"; };
 		C9D0DEAE0C414FFB007D3348 /* CHANGES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGES; sourceTree = "<group>"; };
+		C9D0DECD0C416983007D3348 /* Files.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Files.tiff; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 		C90EB1F30C3FA71200E53C2B /* Toolbar */ = {
 			isa = PBXGroup;
 			children = (
+				C9D0DECD0C416983007D3348 /* Files.tiff */,
 				C9D0DC0B0C406331007D3348 /* Up.tiff */,
 				C9D0DC090C406314007D3348 /* Back.tiff */,
 				C9D0DC070C4062D4007D3348 /* Root.tiff */,
@@ -316,6 +319,7 @@
 				C9D0DC0C0C406331007D3348 /* Up.tiff in Resources */,
 				C9D0DC970C40DD4B007D3348 /* Transference Help in Resources */,
 				C9D0DEAF0C414FFB007D3348 /* CHANGES in Resources */,
+				C9D0DECE0C416983007D3348 /* Files.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
