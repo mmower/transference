@@ -1,0 +1,65 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                browseBack = id; 
+                browseHome = id; 
+                browseIntoSource = id; 
+                browseParent = id; 
+                browseRoot = id; 
+                cancelCopyMove = id; 
+                checkSelectedFiles = id; 
+                chooseSourcePath = id; 
+                chooseTargetPath = id; 
+                copyFiles = id; 
+                drillDownTarget = id; 
+                moveFiles = id; 
+                newFolderCancel = id; 
+                newFolderCreate = id; 
+                newFolderInTarget = id; 
+                refreshFiles = id; 
+                search = id; 
+                setDestination = id; 
+                switchSourceAndTarget = id; 
+                targetFollowsSource = id; 
+                uncheckSelectedFiles = id; 
+            }; 
+            CLASS = BrowserController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                activityCancelButton = NSButton; 
+                activityMessage = NSTextField; 
+                activityMeter = NSProgressIndicator; 
+                activityWindow = NSWindow; 
+                appWindow = NSWindow; 
+                intentField = NSTextField; 
+                newFolderNameField = NSTextField; 
+                newFolderWindow = NSWindow; 
+                sourceFileTable = FileBrowserTableView; 
+                sourceFilesController = NSArrayController; 
+                sourcePathField = NSComboBox; 
+                sourceSearchField = NSSearchField; 
+                targetFolderTable = NSTableView; 
+                targetFoldersController = NSArrayController; 
+                targetPathField = NSComboBox; 
+                toolbar = NSToolbar; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FileBrowser; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {CLASS = FileBrowserTableView; LANGUAGE = ObjC; SUPERCLASS = NSTableView; }, 
+        {
+            CLASS = FileCompletionTextViewDelegate; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {checkForUpdates = id; }; 
+            CLASS = SUUpdater; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}
