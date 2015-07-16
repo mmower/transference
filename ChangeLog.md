@@ -1,0 +1,6 @@
+# Change Log #
+
+## Changes since 1.0.2 ##
+  * NEW: Prompts before overwriting files
+  * FIXED: Window controls properly anchored and do not wander about as window is resized
+  * FIXED: Can copy over existing files
